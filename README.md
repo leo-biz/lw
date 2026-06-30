@@ -1,10 +1,27 @@
 # Leo Life Systems
 
-Private preview repository for Leo Life systems and agent-operations
-documentation.
+Preview repository for Leo Life systems documentation and public-safe agent
+tooling.
 
-This initial snapshot contains `wiki/07-systems/` only. It is intended as a
-private GitHub staging surface, not a public mirror. Public promotion requires
-a separate sanitization and review pass for private/internal audience markers,
-local paths, token-looking examples, and operational details.
+## Contents
 
+- `wiki/07-systems/` — systems and agent-operations documentation.
+- `scripts/` — sanitized task-lifecycle, queue selection, dependency graph,
+  context packet, and publication-safety tooling.
+- `scripts/tests/` — focused unit tests for the exported tooling.
+- `docs/` — usage notes for the script package.
+- `examples/` — example task files and input shapes.
+
+## Script Requirements
+
+Python 3.11+ with `PyYAML`:
+
+```bash
+pip install pyyaml
+```
+
+Run the exported script tests with:
+
+```bash
+python3 -m pytest scripts/tests/
+```

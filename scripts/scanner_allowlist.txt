@@ -1,0 +1,26 @@
+# publication_scanner.py allowlist
+# One literal string per line. Scanner findings whose matched text exactly
+# matches an entry here are suppressed as intentional examples or known
+# false positives.
+#
+# Add entries for:
+#   - Task/claim status words that match Slack ID patterns
+#   - Test fixture fake keys that are clearly not real credentials
+#
+# Do NOT add real secrets here. This file should be committed to the repo.
+
+# ---- Task / claim status words (false positives for Slack ID patterns) ----
+COMPLETED
+UNCLAIMED
+UNBLOCKED
+UNREVIEWED
+UNCERTAIN
+
+# ---- Test fixture fake keys (false positives for secret patterns) ----
+# These appear in test_publication_scanner.py as intentional examples.
+# The scanner test file itself tests that these ARE detected — these entries
+# would suppress them in a real scan. Only add to this file if you are
+# scanning the tests directory as an export candidate.
+# (Uncomment to suppress scanner self-test fixtures in export scan)
+# AKIAIOSFODNN7EXAMPLE
+# sk-FAKEFAKEFAKEFAKEFAKEFAKEFAKEFAKEFAKE
